@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Todo Liste App</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center">ITA Todo Liste</h1>
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="text" class="form-control" id="todoInput" placeholder="Tilføj ny opgave">
+          <button class="btn btn-primary" onclick="addTodo()">Tilføj</button>
+        </div>
+      </div>
+      <ul class="list-group" id="todoList">
+        <!-- Todo items vil blive injiceret her -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  let todoData = [];
+
+  function loadTodos() {
+    const todoList = document.getElementById('todoList');
+    todoList.innerHTML = '';
+    todoData.forEach((todo, index) => {
+      todoList.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="doneCheckbox${index}" ${todo.done ? 'checked' : ''} onclick="toggleDone(${index})">
+          <label class="form-check-label" for="doneCheckbox${index}" style="${todo.done ? 'text-decoration: line-through;' : ''}">
+            ${todo.text}
+          </label>
+        </div>
+        <button class="btn btn-danger" onclick="removeTodo(${index})">Fjern</button>
+      </li>`;
+    });
+  }
+
+  function addTodo() {
+    const todoInput = document.getElementById('todoInput');
+    const newTodo = todoInput.value;
+    if (newTodo) {
+      todoData.push({ text: newTodo, done: false });
+      loadTodos();
+      todoInput.value = '';
+    }
+  }
+
+  function toggleDone(index) {
+    todoData[index].done = !todoData[index].done;
+    loadTodos();
+  }
+
+  function removeTodo(index) {
+    todoData.splice(index, 1);
+    loadTodos();
+  }
+
+</script>
+
+</body>
+</html>
