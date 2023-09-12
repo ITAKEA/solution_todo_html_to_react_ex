@@ -1,5 +1,9 @@
 ## Øvelse: Omdan en HTML Todo Liste til en React App
 
+LØSNING: 
+* [App.js](https://github.com/ITAKEA/solution_todo_html_to_react_ex/blob/master/src/App.js)
+* [original.html](https://github.com/ITAKEA/solution_todo_html_to_react_ex/blob/master/public/original.html)
+
 ### Mål:
 I denne øvelse skal du omdanne en eksisterende [HTML Todo Liste](https://itakea.github.io/todo_html_to_react_ex/) til en React App. Dette indebærer arbejde med _components_, _props_, _state_, _events_ og _form_ elementer.
 
