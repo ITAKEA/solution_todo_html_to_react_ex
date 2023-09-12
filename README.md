@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+## Øvelse: Omdan en HTML Todo Liste til en React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Mål:
+I denne øvelse skal du omdanne en eksisterende [HTML Todo Liste](https://itakea.github.io/todo_html_to_react_ex/) til en React App. Dette indebærer arbejde med _components_, _props_, _state_, _events_ og _form_ elementer.
 
-## Available Scripts
+### Materialer:
+- Startkode: [En simpel Todo Liste skrevet i HTML, CSS (Bootstrap) og JavaScript](https://github.com/ITAKEA/todo_html_to_react_ex/blob/master/index.html). 
 
-In the project directory, you can run:
+### Instruktioner:
 
-### `npm start`
+1. **Oprettelse af en ny React App**
+   - Brug Create React App til at oprette en ny React app med kommandoen `npx create-react-app react-todo-list`.
+   - Gå ind i din nye app-mappe med kommandoen `cd react-todo-list`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Installation af Bootstrap**
+(Hvis du fortrækker et andet framework, eller fortrækker at lave alt css selv er det helt fint. Bootstrap er bare et eksempel.)    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Installer Bootstrap i din React app med kommandoen `npm install bootstrap`.
+   - Inkluder Bootstrap i din app ved at tilføje følgende linje i `src/index.css`: `@import '~bootstrap/dist/css/bootstrap.min.css';`.
 
-### `npm test`
+3. **Oprettelse af TodoList Komponent**
+   - Opret en ny fil `TodoList.js` i `src` mappen.
+   - I `TodoList.js`, opret en funktionel komponent `TodoList` der returnerer en JSX repræsentation af den oprindelige HTML-struktur (du kan tage udgangspunkt i den HTML-struktur, der blev leveret i startkoden).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Tilføjelse af State og Funktioner**
+   - Brug `useState` hook til at oprette state variabler for din todo liste og input-feltet.
+   - Implementer funktionerne `addTodo`, `toggleDone` og `removeTodo` for at håndtere henholdsvis tilføjelse af nye todos, markering af todos som fuldført, og fjernelse af todos.
 
-### `npm run build`
+5. **Rendering af Todo Liste**
+   - Brug `map` funktionen til at gennemgå alle todos og vise dem i en liste med en checkbox og en "fjern" knap for hver todo.
+   - Tilføj en `key` prop til hvert element i listen for at hjælpe React med at identificere hvilke elementer der har ændret sig.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. **Test din App**
+   - Kør din app med kommandoen `npm start` og test funktionaliteten i din browser.
+   - Sørg for at din app fungerer som forventet og ligner den oprindelige HTML-version.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Bonus opgave:
+- Tilføj yderligere funktionaliteter eller forbedringer til din app, såsom muligheden for at redigere todos, en "markér alle som fuldført" knap, eller en måde at filtrere og vise kun fuldførte eller ufuldførte todos.
